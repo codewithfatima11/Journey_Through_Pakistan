@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Journey through Pakistan — Booking</title>
+
+  <style>
+    :root{
+      --bg:#1e1e1e; --panel:#111;
+      --accent:#1db954; --accent-2:#17a64a;
+      --muted:#cfd8dc; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#fff;line-height:1.5}
+    .container{max-width:var(--maxw);margin:0 auto;padding:20px}
+
+    /* Navbar */
+    .navbar{display:flex;align-items:center;justify-content:space-between;background:var(--panel);padding:10px 18px;position:sticky;top:0;z-index:1000}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+    .logo-img{
+  width:48px;
+  height:48px;
+  object-fit:cover; /* fills entire box */
+  border-radius:8px;
+  background:var(--glass);
+  padding:0; /* remove padding */
+  display:block;
+}
+
+    .site-title{font-weight:700}
+    .site-tag{font-size:12px;color:var(--muted)}
+    .nav-toggle{display:none;background:none;border:0;color:#fff;font-size:22px;cursor:pointer}
+    .nav-links{list-style:none;display:flex;gap:10px;margin:0;padding:0}
+    .nav-links li a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:14px}
+    .nav-links li a:hover{background:rgba(29,185,84,0.1);color:var(--accent)}
+    .nav-links li a.active{color:var(--accent);font-weight:700}
+
+    /* Hero */
+    .hero{padding:48px 18px;margin:18px;border-radius:12px;background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://source.unsplash.com/1600x700/?pakistan,travel');background-size:cover;background-position:center;text-align:center}
+    .hero h1{font-size:2.4rem;margin:0 0 12px}
+    .hero p{color:var(--muted)}
+
+    /* Booking form */
+    .section{padding:28px 18px;margin:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .booking-form{display:flex;flex-direction:column;gap:16px;max-width:600px;margin:0 auto}
+    .booking-form input, .booking-form select, .booking-form textarea{padding:12px;border-radius:8px;border:none;background:#222;color:#fff;font-size:14px;outline:none}
+    .booking-form button{padding:12px;background:var(--accent);color:#041015;font-weight:700;border:none;border-radius:8px;cursor:pointer;transition:background .3s}
+    .booking-form button:hover{background:var(--accent-2)}
+
+    /* Footer */
+    footer{background:var(--panel);padding:18px;text-align:center;margin-top:20px}
+    footer .small{color:var(--muted);font-size:13px}
+
+    @media(max-width:820px){
+      .nav-toggle{display:block}
+      .nav-links{display:none;flex-direction:column;position:absolute;top:64px;right:12px;background:var(--panel);padding:12px;border-radius:10px}
+      .nav-links.open{display:flex}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <img src="markhor-logo.png" alt="Logo" class="logo-img" />
+        <div>
+          <div class="site-title">Journey through Pakistan</div>
+          <div class="site-tag">Our Services</div>
+        </div>
+      </a>
+      <button class="nav-toggle" id="navToggle">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero">
+      <h1>Book Your Trip</h1>
+      <p>Fill out the form below to plan your perfect journey across Pakistan.</p>
+    </section>
+
+    <!-- Booking form -->
+    <section class="section">
+      <form class="booking-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <select required>
+          <option value="" disabled selected>Select Destination</option>
+          <option value="hunza">Hunza Valley</option>
+          <option value="skardu">Skardu</option>
+          <option value="lahore">Lahore</option>
+          <option value="karachi">Karachi</option>
+          <option value="fairy_meadows">Fairy Meadows</option>
+          <option value="multan">Multan</option>
+        </select>
+        <textarea placeholder="Additional Notes" rows="4"></textarea>
+        <button type="submit">Book Now</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <img src="markhor-logo.png" alt="Logo small" style="width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,0.05);padding:2px">
+        <div class="small">&copy; 2025 Fatima Mirza — Journey through Pakistan</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle=document.getElementById("navToggle");
+    const navLinks=document.getElementById("navLinks");
+    navToggle.addEventListener("click",()=>navLinks.classList.toggle("open"));
+    const path=location.pathname.split("/").pop()||"booking.html";
+    document.querySelectorAll(".nav-links a").forEach(a=>{
+      if(a.getAttribute("href")===path){a.classList.add("active")}
+    });
+  </script>
+</body>
+</html>
